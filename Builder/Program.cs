@@ -10,10 +10,13 @@ namespace Builder
         static void Main(string[] args)
         {
             //Car Example
-            var chevrolet = new CarFactory(new HatchType());
-            chevrolet.Order();
-            var onix = chevrolet.GetNewCar();
-            onix.FinalCar("Onix");
+            var honda = new HondaBuilder();
+            var vehicleCreator = new VehicleCreator(honda);
+            vehicleCreator.CreateVehicle();
+
+            var vehicle = vehicleCreator.GetVehicle();
+            vehicle.ShowInfo();
+
 
             //House Example
             var newOrder = new RoutineHouse();
